@@ -1,0 +1,83 @@
+{
+  config = {
+    globals = {
+      mapleader = " ";
+      loaded_ruby_provider = 0;
+      loaded_perl_provider = 0;
+      loaded_python_provider = 0;
+    };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>q";
+        action = "<cmd>qa<CR>";
+        options.desc = "Quit NeoVim";
+      }
+      {
+        mode = "n";
+        key = "<leader>n";
+        action = "<cmd>tabnew<CR>";
+        options.desc = "New tab";
+      }
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = "<cmd>w<CR>";
+        options.desc = "Save Current Buffer";
+      }
+
+      {
+        mode = "n";
+        key = "<C-h>";
+        action = "<C-w>h";
+      }
+      {
+        mode = "n";
+        key = "<C-j>";
+        action = "<C-w>j";
+      }
+      {
+        mode = "n";
+        key = "<C-k>";
+        action = "<C-w>k";
+      }
+      {
+        mode = "n";
+        key = "<C-l>";
+        action = "<C-w>l";
+      }
+    ];
+    clipboard = {
+      register = "unnamedplus";
+    };
+    options = {
+      autoindent = true;
+      expandtab = true;
+      hidden = true;
+      ignorecase = true;
+      incsearch = true;
+      number = true;
+      relativenumber = false;
+      scrolloff = 15;
+      shiftwidth = 4;
+      signcolumn = "yes";
+      smartcase = true;
+      softtabstop = 4;
+      spell = true;
+      splitbelow = true;
+      splitright = true;
+      tabstop = 4;
+      termguicolors = true;
+      updatetime = 100;
+      undofile = true;
+      swapfile = false;
+    };
+    autoCmd = [
+      {
+        event = "FileType";
+        pattern = "nix";
+        command = "setlocal tabstop=2 shiftwidth=2 softtabstop=2";
+      }
+    ];
+  };
+}

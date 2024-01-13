@@ -1,0 +1,5 @@
+{
+  colorschemes.dracula = {
+    enable = true;
+  };
+}
