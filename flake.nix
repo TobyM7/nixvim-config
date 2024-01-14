@@ -24,18 +24,15 @@
       nvim = nixvim'.makeNixvimWithModule {
         inherit pkgs;
         module = config;
-        # You can use `extraSpecialArgs` to pass additional arguments to your module files
-        extraSpecialArgs = {
-          inherit self;
-        };
       };
     in
     {
+      formatter = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
       checks = {
-        # Run `nix flake check .` to verify that your config is not broken
         default = nixvimLib.check.mkTestDerivationFromNvim {
           inherit nvim;
-          name = "A nixvim configuration";
+          name = "My nixvim configuration";
         };
       };
 
@@ -44,11 +41,5 @@
         default = nvim;
       };
 
-      templates.default = {
-        path = ./.;
-        description = "TobyM7's nixvim flake.";
-      };
-
-      formatter = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     });
 }
