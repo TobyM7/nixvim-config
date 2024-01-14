@@ -49,6 +49,6 @@
         description = "TobyM7's nixvim flake.";
       };
 
-      formatter = pkgs.nixpkgs-fmt;
+      formatter = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     });
 }
